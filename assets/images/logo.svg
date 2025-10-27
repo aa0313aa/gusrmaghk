@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="오렌지pay 로고">
+  <defs>
+    <linearGradient id="lg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff8a00"/>
+      <stop offset="100%" stop-color="#ff5e62"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- circular mark -->
+  <g transform="translate(40,20)">
+    <circle cx="40" cy="40" r="36" fill="url(#lg)" filter="url(#shadow)" />
+    <path d="M36 26c6 0 10 4 10 10s-4 10-10 10-10-4-10-10 4-10 10-10z" fill="rgba(255,255,255,0.95)" transform="translate(0,0) scale(0.9) translate(4,2)"/>
+  </g>
+
+  <!-- wordmark -->
+  <g transform="translate(110,70)">
+    <text x="0" y="0" font-family="'Noto Sans KR', sans-serif" font-size="32" fill="#111827" font-weight="700">오렌지</text>
+    <text x="0" y="36" font-family="'Noto Sans KR', sans-serif" font-size="22" fill="#ff5e62" font-weight="700">pay</text>
+  </g>
+</svg>

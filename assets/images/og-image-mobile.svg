@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="418" viewBox="0 0 800 418" role="img" aria-label="오렌지pay 모바일 OG 이미지">
+  <defs>
+    <linearGradient id="mg" x1="0" x2="1"><stop offset="0%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff5e62"/></linearGradient>
+  </defs>
+  <rect width="800" height="418" fill="#071025" />
+  <rect x="28" y="36" width="744" height="346" rx="20" fill="url(#mg)" />
+  <text x="60" y="130" font-family="'Noto Sans KR', sans-serif" font-size="40" fill="#fff" font-weight="700">오렌지pay</text>
+  <text x="60" y="180" font-family="'Noto Sans KR', sans-serif" font-size="18" fill="#fff">신용카드 한도 기반 합법적 현금화 서비스 · 빠른 정산</text>
+</svg>

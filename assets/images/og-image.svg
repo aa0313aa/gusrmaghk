@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="오렌지pay 소개 이미지">
+  <defs>
+    <linearGradient id="ogg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff8a00"/>
+      <stop offset="100%" stop-color="#ff5e62"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0f172a" />
+
+  <!-- left panel gradient box -->
+  <rect x="60" y="80" width="680" height="470" rx="24" fill="url(#ogg)" filter="url(#soft)" />
+
+  <!-- logo mark on left box -->
+  <g transform="translate(140,190)">
+    <circle cx="40" cy="40" r="36" fill="#fff" opacity="0.12" />
+    <text x="96" y="24" font-family="'Noto Sans KR', sans-serif" font-size="56" fill="#fff" font-weight="700">오렌지pay</text>
+    <text x="96" y="90" font-family="'Noto Sans KR', sans-serif" font-size="26" fill="#fff" opacity="0.9">신용카드 한도 기반 합법적 현금화 서비스</text>
+  </g>
+
+  <!-- accent badges -->
+  <g transform="translate(820,160)">
+    <rect x="0" y="0" width="320" height="80" rx="12" fill="#111827" opacity="0.6" />
+    <text x="24" y="48" font-family="'Noto Sans KR', sans-serif" font-size="24" fill="#fff">빠른 정산 · 투명한 절차 · 24시간 상담</text>
+  </g>
+
+  <!-- subtle footer line -->
+  <rect x="60" y="570" width="1080" height="2" fill="#0b1220" opacity="0.2" />
+</svg>

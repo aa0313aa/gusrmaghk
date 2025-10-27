@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#FF7043" />
+      <stop offset="1" stop-color="#FF8A65" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)" />
+  <g transform="translate(80,120)">
+    <text x="0" y="0" font-family="Noto Sans KR, Arial, sans-serif" font-size="56" font-weight="800" fill="#ffffff">오렌지pay</text>
+    <rect x="0" y="20" width="540" height="6" fill="#fff" opacity="0.15" />
+    <text x="0" y="100" font-family="Noto Sans KR, Arial, sans-serif" font-size="36" fill="#fff">신용카드 현금화 전문 · 빠른 정산</text>
+    <g transform="translate(0,160)">
+      <rect x="0" y="0" rx="6" ry="6" width="220" height="48" fill="#fff" opacity="0.12" />
+      <text x="16" y="34" font-family="Noto Sans KR, Arial, sans-serif" font-size="22" fill="#fff">수수료 5~15%</text>
+    </g>
+  </g>
+    <g transform="translate(880,140)" aria-hidden="true">
+      <rect x="0" y="0" width="220" height="120" rx="12" fill="#ffffff" opacity="0.10" />
+      <text x="110" y="72" font-family="Noto Sans KR, Arial" font-size="44" fill="#fff" text-anchor="middle">₩</text>
+      <rect x="120" y="78" width="140" height="80" rx="10" fill="#fff" opacity="0.08" transform="translate(-80,20) rotate(-10 0 0)" />
+    </g>
+</svg>

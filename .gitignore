@@ -1,0 +1,36 @@
+# Node & tooling
+node_modules/
+package-lock.json
+
+# Build & caches
+.dist/
+dist/
+build/
+.cache/
+coverage/
+.tmp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env/secrets
+.env
+.env.*
+*.local
+
+# Reports
+lighthouse-*.html
+reports/
+
+# Misc
+*.swp
+*.swo

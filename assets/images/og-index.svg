@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FF8C42" />
+  <rect x="60" y="60" width="1080" height="510" rx="16" fill="#fff" opacity="0.06" />
+  <g transform="translate(80,120)">
+    <text x="0" y="0" font-family="Noto Sans KR, Arial, sans-serif" font-size="48" font-weight="700" fill="#fff">오렌지pay</text>
+    <text x="0" y="90" font-family="Noto Sans KR, Arial, sans-serif" font-size="40" fill="#fff">신용카드 현금화 전문 서비스</text>
+    <text x="0" y="150" font-family="Noto Sans KR, Arial, sans-serif" font-size="28" fill="#fff" opacity="0.95">빠르고 안전한 정산 · 수수료 5~15%</text>
+  </g>
+  <!-- icons: 카드 + 돈 -->
+  <g transform="translate(920,140)" aria-hidden="true">
+    <!-- money icon -->
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="200" height="120" rx="12" fill="#ffffff" opacity="0.12" />
+      <rect x="16" y="18" width="168" height="84" rx="8" fill="#ffffff" opacity="0.18" />
+      <text x="100" y="74" font-family="Noto Sans KR, Arial" font-size="48" fill="#6b2a00" text-anchor="middle">₩</text>
+    </g>
+    <!-- card icon (overlay) -->
+    <g transform="translate(110,70)">
+      <rect x="0" y="0" width="140" height="84" rx="12" fill="#ffffff" opacity="0.10" />
+      <rect x="12" y="18" width="116" height="18" rx="4" fill="#ffffff" opacity="0.18" />
+    </g>
+  </g>
+</svg>

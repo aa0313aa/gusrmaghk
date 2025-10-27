@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FF7043" />
+  <g transform="translate(80,140)">
+    <text x="0" y="0" font-family="Noto Sans KR, Arial, sans-serif" font-size="44" font-weight="700" fill="#fff">회사소개 — 오렌지pay</text>
+    <text x="0" y="70" font-family="Noto Sans KR, Arial, sans-serif" font-size="28" fill="#fff">투명성과 안전성을 기반으로 한 신용카드 현금화 서비스</text>
+  </g>
+</svg>

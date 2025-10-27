@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FFB289" />
+  <g transform="translate(80,140)">
+    <text x="0" y="0" font-family="Noto Sans KR, Arial, sans-serif" font-size="44" font-weight="700" fill="#6b2a00">신용카드 한도 현금화 안내</text>
+    <text x="0" y="70" font-family="Noto Sans KR, Arial, sans-serif" font-size="28" fill="#6b2a00">절차 · 수수료(5~15%) · 안전 수칙</text>
+  </g>
+  <g transform="translate(920,120)" aria-hidden="true">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#6b2a00" opacity="0.10" />
+    <text x="100" y="74" font-family="Noto Sans KR, Arial" font-size="44" fill="#fff" text-anchor="middle">₩</text>
+  </g>
+</svg>
