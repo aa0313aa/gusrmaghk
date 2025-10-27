@@ -1,3 +1,11 @@
+# Allow common crawlers and explicitly allow Facebook crawlers to avoid 403 on scraping
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: facebot
+Allow: /
+
 User-agent: *
 Allow: /
+
 Sitemap: https://cardcashing.kr/sitemap.xml
