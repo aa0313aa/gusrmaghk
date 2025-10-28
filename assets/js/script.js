@@ -339,4 +339,102 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Console log for debugging
     console.log('비즈니스 웹사이트가 성공적으로 로드되었습니다.');
+
+    // Hero slider (accessible, autoplay, touch-enabled)
+    const slider = document.querySelector('.hero-visual .slider');
+    if (slider) {
+        const slidesWrap = slider.querySelector('.slides');
+        const slides = Array.from(slidesWrap.querySelectorAll('.slide'));
+        const prevBtn = slider.querySelector('.slider-control.prev');
+        const nextBtn = slider.querySelector('.slider-control.next');
+        const dotsWrap = slider.querySelector('.slider-dots');
+
+        let index = 0;
+        let autoTimer = null;
+        const interval = 5000;
+        const total = slides.length;
+
+        // Build dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', `${i + 1}번 슬라이드`);
+            dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsWrap.querySelectorAll('button'));
+
+        function update() {
+            slidesWrap.style.transform = `translateX(-${index * 100}%)`;
+            slides.forEach((s, i) => {
+                const active = i === index;
+                s.classList.toggle('is-active', active);
+                s.setAttribute('aria-hidden', active ? 'false' : 'true');
+            });
+            dots.forEach((d, i) => d.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+        }
+
+        function goTo(i) {
+            index = (i + total) % total;
+            update();
+            restartAuto();
+        }
+
+        function next() { goTo(index + 1); }
+        function prev() { goTo(index - 1); }
+
+        // Controls
+        if (prevBtn) prevBtn.addEventListener('click', prev);
+        if (nextBtn) nextBtn.addEventListener('click', next);
+
+        // Keyboard access
+        slider.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+        });
+
+        // Autoplay with pause on hover/focus
+        function startAuto() {
+            if (autoTimer) return;
+            autoTimer = setInterval(next, interval);
+        }
+        function stopAuto() {
+            if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+        }
+        function restartAuto() { stopAuto(); startAuto(); }
+
+        slider.addEventListener('mouseenter', stopAuto);
+        slider.addEventListener('mouseleave', startAuto);
+        slider.addEventListener('focusin', stopAuto);
+        slider.addEventListener('focusout', startAuto);
+
+        // Touch swipe support
+        let startX = 0; let deltaX = 0; let isTouching = false;
+        slider.addEventListener('touchstart', (e) => {
+            isTouching = true;
+            startX = e.touches[0].clientX;
+            deltaX = 0;
+            stopAuto();
+        }, { passive: true });
+        slider.addEventListener('touchmove', (e) => {
+            if (!isTouching) return;
+            deltaX = e.touches[0].clientX - startX;
+        }, { passive: true });
+        slider.addEventListener('touchend', () => {
+            if (!isTouching) return;
+            if (Math.abs(deltaX) > 50) {
+                if (deltaX < 0) next(); else prev();
+            } else {
+                startAuto();
+            }
+            isTouching = false;
+        });
+
+        // Init
+        update();
+        startAuto();
+    }
 });
