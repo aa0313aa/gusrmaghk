@@ -1386,8 +1386,14 @@ table.table caption { caption-side: top; text-align: left; font-weight: 700; mar
 .kv dd { margin: 0; color: #374151; }
 
 /* In-page TOC */
-.toc { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; margin: 0.5rem 0 1.25rem; }
+.toc { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; margin: 0.5rem 0 1.25rem; position: sticky; top: 80px; z-index: 900; }
 .toc ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 16px; }
 .toc a { text-decoration: none; color: #2563eb; font-weight: 600; font-size: 0.95rem; }
 .toc a:hover { text-decoration: underline; }
 .toc a:focus { outline: 2px solid rgba(37,99,235,0.35); outline-offset: 2px; border-radius: 6px; }
+.toc a[aria-current="true"], .toc a.is-active { color: #1d4ed8; text-decoration: underline; }
+
+@media (max-width: 768px) {
+    .toc { top: 70px; overflow-x: auto; }
+    .toc ul { flex-wrap: nowrap; white-space: nowrap; }
+}

@@ -437,4 +437,90 @@ document.addEventListener('DOMContentLoaded', function() {
         update();
         startAuto();
     }
+
+    // In-page TOC: sticky highlight (scrollspy)
+    const toc = document.querySelector('.toc');
+    if (toc) {
+        const tocLinks = Array.from(toc.querySelectorAll('a[href^="#"]'));
+        const sectionMap = new Map();
+        tocLinks.forEach(link => {
+            const id = link.getAttribute('href');
+            if (!id || id === '#') return;
+            const section = document.querySelector(id);
+            if (section) sectionMap.set(section, link);
+        });
+
+        function setActive(link) {
+            tocLinks.forEach(a => {
+                a.classList.remove('is-active');
+                a.removeAttribute('aria-current');
+            });
+            if (link) {
+                link.classList.add('is-active');
+                link.setAttribute('aria-current', 'true');
+            }
+        }
+
+        // Highlight on click immediately
+        tocLinks.forEach(link => {
+            link.addEventListener('click', () => setActive(link));
+        });
+
+        // Observe sections in viewport
+        const headerEl = document.querySelector('.header');
+        const headerOffset = headerEl ? headerEl.offsetHeight + 20 : 90;
+        const tocHeight = toc.offsetHeight || 0;
+        const topOffset = headerOffset + tocHeight; // reserve space for sticky header + toc
+
+        let currentActive = null;
+        const io = new IntersectionObserver((entries) => {
+            // Find the most visible intersecting section near top
+            let candidate = null;
+            let maxRatio = 0;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.intersectionRatio > maxRatio) {
+                        maxRatio = entry.intersectionRatio;
+                        candidate = entry.target;
+                    }
+                } else {
+                    // If section leaves from top, and it's the current, we'll update on next intersecting one
+                }
+            });
+            if (candidate) {
+                const link = sectionMap.get(candidate);
+                if (link && link !== currentActive) {
+                    currentActive = link;
+                    setActive(link);
+                }
+            } else {
+                // Fallback: find the section whose top is closest above the offset
+                let best = null; let bestDelta = Infinity;
+                sectionMap.forEach((link, section) => {
+                    const rect = section.getBoundingClientRect();
+                    const delta = Math.abs(rect.top - topOffset);
+                    if (rect.top <= topOffset && delta < bestDelta) { best = section; bestDelta = delta; }
+                });
+                if (best) {
+                    const link = sectionMap.get(best);
+                    if (link && link !== currentActive) {
+                        currentActive = link; setActive(link);
+                    }
+                }
+            }
+        }, { threshold: [0.25, 0.5, 0.75], root: null, rootMargin: `-${topOffset}px 0px -55% 0px` });
+
+        sectionMap.forEach((_, section) => io.observe(section));
+
+        // Initialize active state based on current hash or first section
+        const initHash = window.location.hash && toc.querySelector(`a[href='${window.location.hash}']`);
+        setActive(initHash || tocLinks[0] || null);
+
+        // Update on hashchange (e.g., back/forward)
+        window.addEventListener('hashchange', () => {
+            const h = window.location.hash;
+            const link = h ? toc.querySelector(`a[href='${h}']`) : null;
+            setActive(link);
+        });
+    }
 });
