@@ -248,50 +248,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .feature-list li, .contact-item').forEach(el => {
+    document.querySelectorAll('.service-card, .features-list li, .contact-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 
-    // Counter animation for stats (if needed)
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        
-        function updateCounter() {
-            start += increment;
-            if (start < target) {
-                element.textContent = Math.floor(start);
-                requestAnimationFrame(updateCounter);
-            } else {
-                element.textContent = target;
-            }
-        }
-        
-        updateCounter();
-    }
-
-    // Utility function for debouncing
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-
-    // Performance optimization for scroll events
-    const debouncedScrollHandler = debounce(() => {
-        // Handle scroll events here if needed
-    }, 100);
-
-    window.addEventListener('scroll', debouncedScrollHandler);
+    // Remove unused counter/scroll handlers to reduce overhead
 
     // Loading screen (optional)
     window.addEventListener('load', function() {
