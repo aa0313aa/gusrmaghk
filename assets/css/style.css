@@ -1364,3 +1364,30 @@ html { font-size: 16px; }
         font-size: 0.95rem;
     }
 }
+
+/* Tables */
+.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.25rem 0; }
+table.table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+table.table thead { background: #f8fafc; }
+table.table th, table.table td { padding: 12px 14px; border-bottom: 1px solid #eef2f7; text-align: left; vertical-align: top; }
+table.table th { font-weight: 700; color: #111827; white-space: nowrap; }
+table.table tbody tr:nth-child(even) { background: #fcfdff; }
+table.table caption { caption-side: top; text-align: left; font-weight: 700; margin-bottom: 8px; color: #111; }
+
+/* Badges for legality/risk */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; line-height: 1.6; font-weight: 600; }
+.badge-safe { background: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
+.badge-risk { background: #fff8e1; color: #8d6e63; border: 1px solid #ffe0b2; }
+.badge-illegal { background: #ffebee; color: #b71c1c; border: 1px solid #ffcdd2; }
+
+/* Definition list style (optional) */
+.kv { display: grid; grid-template-columns: 160px 1fr; gap: 10px 16px; margin: 1rem 0; }
+.kv dt { font-weight: 700; color: #111827; }
+.kv dd { margin: 0; color: #374151; }
+
+/* In-page TOC */
+.toc { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; margin: 0.5rem 0 1.25rem; }
+.toc ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 16px; }
+.toc a { text-decoration: none; color: #2563eb; font-weight: 600; font-size: 0.95rem; }
+.toc a:hover { text-decoration: underline; }
+.toc a:focus { outline: 2px solid rgba(37,99,235,0.35); outline-offset: 2px; border-radius: 6px; }
