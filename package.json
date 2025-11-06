@@ -1,5 +1,13 @@
 {
+  "name": "cardcashing-site",
+  "private": true,
+  "scripts": {
+    "favicon": "node tools/generate-favicon.js"
+  },
   "dependencies": {
     "sharp": "^0.34.4"
+  },
+  "devDependencies": {
+    "png-to-ico": "^2.1.2"
   }
 }
